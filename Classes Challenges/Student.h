@@ -14,8 +14,9 @@
 #include <string>
 #include <vector>
 #include "Module.h"
+#include "Person.h"
 
-class Student {
+class Student : protected Person{
 
 	//Number of students
 	static int numberofStudents_;
@@ -23,7 +24,6 @@ class Student {
 	//Priviate data members - we make them private so we can protect the data
 	//This enforces encapsulation. We control access through the public member functions
 private:
-	std::string name_;
 	std::string registrstionID_;
 	std::string course_;
 	int yearofStudy_;
@@ -79,7 +79,7 @@ public:
 	void UpdateModule(std::string moduleTitle, std::string moduleCode, int moduleCreditPoints, int moduleMark);
 	int GetNumberModules();
 
-	void ToString() const;
+	std::string ToString();
 
 	std::string Student::CalculateClassification() const;
 	//std::string Student::CalculateClassification();

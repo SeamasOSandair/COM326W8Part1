@@ -98,11 +98,11 @@ int Student::GetYearofStudy() const {
 	return yearofStudy_;
 }
 
-void Student::ToString() const {
-	std::string output = name_ + " " + registrstionID_ + " " + course_ + " " + std::to_string(yearofStudy_) + " " + "\n";
+std::string Student::ToString(){
+	std::string output = Person::ToString() + " " + registrstionID_ + " " + course_ + " " + std::to_string(yearofStudy_) + " " + "\n";
 		//+ std::to_string(moduleOneMark_) + " " + std::to_string(moduleTwoMark_) + " " + std::to_string(moduleThreeMark_) + "\n";
 	//+yearofStudy_ + " " + moduleOneMark_ + " "	+ moduleTwoMark_ + " " + moduleThreeMark_;
-	std::cout << output;
+	return output;
 }
 
 std::string Student::CalculateClassification() const {
